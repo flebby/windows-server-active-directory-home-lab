@@ -68,7 +68,7 @@ After attaching the ISO, the Windows Server installation could begin successfull
 
 ### Virtual Machine Created
 
-![Server01 Created](screenshots/server01-created.png)
+![Server01-Created](screenshots/server01-created.png)
 
 ### Boot Error
 
