@@ -91,7 +91,7 @@ After attaching the ISO, the installation process continued successfully.
 
 Screenshot:
 
-![Boot Error](screenshots/no-bootable-medium.png)
+
 
 
 ---
