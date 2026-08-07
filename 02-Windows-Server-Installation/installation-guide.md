@@ -1,105 +1,146 @@
-# Windows Server 2022 Installation
+# Windows Server Installation
 
-## Project Objective
+## Overview
 
-The objective of this phase was to create a Windows Server 2022 virtual machine using Oracle VirtualBox and prepare it for Active Directory and system administration tasks.
+This document covers the creation and installation of a Windows Server virtual machine using Oracle VirtualBox.
+
+The server will later be configured as a Domain Controller for the Active Directory Home Lab.
 
 ---
 
-## Lab Environment
+# Objective
+
+The objectives of this stage are:
+
+- Create a Windows Server virtual machine
+- Configure virtual hardware resources
+- Attach Windows Server ISO
+- Install Windows Server
+- Prepare the server for Active Directory configuration
+
+---
+
+# Lab Environment
 
 | Component | Details |
-|-----------|---------|
-| Host Operating System | Windows 10/11 |
+|---|---|
+| Host Machine | Personal Laptop |
 | Virtualization Software | Oracle VirtualBox |
-| Guest Operating System | Windows Server 2022 Evaluation |
-| Virtual Machine Name | Server01 |
+| Operating System | Windows Server 2022 Evaluation |
+| VM Name | Server01 |
 
 ---
 
-## Virtual Machine Configuration
+# Virtual Machine Configuration
 
-| Setting | Value |
-|---------|-------|
-| Name | Server01 |
-| Operating System | Windows Server 2022 (64-bit) *(Windows 2019 (64-bit) selected in VirtualBox if 2022 was unavailable)* |
-| Memory | 4096 MB (4 GB) |
-| Processor | 2 CPU Cores |
-| Hard Disk | 60 GB (Dynamically Allocated VDI) |
+| Resource | Allocation |
+|---|---|
+| RAM | 4GB |
+| CPU | 2 Cores |
+| Storage | 60GB |
 | Network Adapter | NAT |
+| Disk Type | Dynamically Allocated |
 
 ---
 
-## Installation Steps
+# Installation Steps
 
-1. Opened Oracle VirtualBox.
-2. Created a new virtual machine named **Server01**.
-3. Allocated 4 GB of RAM and 2 CPU cores.
-4. Created a 60 GB dynamically allocated virtual hard disk.
-5. Configured the network adapter to use NAT.
-6. Attempted to start the virtual machine.
+## Step 1: Creating the Virtual Machine
 
----
+Created a new virtual machine named: 
 
-## Issue Encountered
 
-When starting the virtual machine, the following error was displayed:
+Configured the following:
 
-> **FATAL: No bootable medium found! System halted.**
+- Windows Server operating system
+- 4GB RAM
+- 2 CPU cores
+- 60GB virtual hard disk
 
-### Cause
 
-The Windows Server 2022 ISO image had not yet been attached to the virtual machine, so VirtualBox could not find a bootable operating system.
+Screenshot:
 
-### Resolution
+![Server Created](screenshots/server01-created.png)
 
-1. Powered off the virtual machine.
-2. Opened **Settings > Storage** in VirtualBox.
-3. Selected the virtual optical drive.
-4. Attached the Windows Server 2022 Evaluation ISO.
-5. Saved the settings.
-6. Restarted the virtual machine.
-
-After attaching the ISO, the Windows Server installation could begin successfully.
 
 ---
 
-## Screenshots
+## Step 2: Mounting Windows Server ISO
 
-### Virtual Machine Created
+The Windows Server installation ISO was attached through:
 
-![Server01-Created](screenshots/server01-created.png)
 
-### Boot Error
-
-![No Bootable Medium Error](screenshots/no-bootable-medium.png)
-
-### Windows Server ISO Attached
+Screenshot:
 
 ![ISO Mounted](screenshots/windows-server-iso-mounted.png)
 
----
-
-## Skills Demonstrated
-
-- Virtual machine creation
-- VirtualBox configuration
-- Windows Server deployment
-- Boot troubleshooting
-- Virtual storage configuration
 
 ---
 
-## Lessons Learned
+## Step 3: Troubleshooting Boot Error
 
-A virtual machine requires a bootable installation media before an operating system can be installed. If no ISO is attached, VirtualBox displays the message **"No bootable medium found! System halted."** Attaching the Windows Server ISO through the Storage settings resolves the issue.
+During the first startup attempt, VirtualBox displayed:
+
+
+### Cause
+
+The virtual machine did not have a bootable installation media attached.
+
+### Solution
+
+The Windows Server ISO was attached through the VirtualBox storage settings.
+
+After attaching the ISO, the installation process continued successfully.
+
+Screenshot:
+
+![Boot Error](screenshots/no-bootable-medium.png)
+
 
 ---
 
-## Next Steps
+## Step 4: Windows Server Installation
 
-- Install Windows Server 2022.
-- Configure the Administrator account.
-- Rename the server.
-- Configure a static IP address.
-- Install Active Directory Domain Services.
+The installation process included:
+
+- Selecting language preferences
+- Choosing Windows Server edition
+- Accepting license terms
+- Selecting custom installation
+- Installing Windows Server
+
+Screenshot:
+
+![Windows Setup](screenshots/windows-setup.png)
+
+
+---
+
+# Skills Demonstrated
+
+- Virtual machine deployment
+- VirtualBox administration
+- Windows Server installation
+- Troubleshooting boot issues
+- Documentation skills
+
+
+---
+
+# Lessons Learned
+
+A virtual machine requires a bootable operating system image before installation can begin.
+
+When VirtualBox cannot detect an ISO or bootable disk, it displays the "No bootable medium found" error.
+
+---
+
+# Next Steps
+
+The next phase will cover:
+
+- Initial Windows Server configuration
+- Renaming the server
+- Static IP configuration
+- Installing Active Directory Domain Services
+
