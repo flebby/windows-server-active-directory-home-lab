@@ -117,3 +117,47 @@ This confirmed that Server01 can communicate with the VirtualBox NAT gateway.
 ### Result
 
 Server01 was successfully configured with a static IP address and connectivity to the VirtualBox NAT gateway was verified.
+
+## Step 4: Testing Internet Connectivity and DNS Resolution
+
+After configuring the static IP address, network connectivity and DNS name resolution were tested.
+
+### Internet Connectivity Test
+
+The following command was used:
+
+```text
+ping 8.8.8.8
+```
+
+The test returned four successful replies with:
+
+```text
+Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)
+```
+
+This confirmed that Server01 could successfully reach an external IP address through the VirtualBox network.
+
+### DNS Resolution Test
+
+The following command was used:
+
+```text
+nslookup google.com
+```
+
+The test successfully resolved `google.com` to an IP address.
+
+This confirmed that DNS name resolution was working before the Active Directory deployment.
+
+### Screenshot
+
+![Internet and DNS Test](screenshots/server01-internet-dns-test.png)
+
+### Result
+
+Server01 successfully demonstrated Internet connectivity and DNS name resolution.
+
+The DNS configuration will be reviewed before deploying Active Directory Domain Services because Active Directory relies heavily on DNS.
+
+
