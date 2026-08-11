@@ -40,3 +40,30 @@ The server was successfully renamed to `Server01` and restarted to apply the cha
 ## Next Step
 
 The next step is to configure a static IP address for Server01.
+
+## Step 2: Reviewing Current Network Configuration
+
+Before assigning a static IP address, the existing network configuration was reviewed.
+
+The server was initially configured to obtain its network settings automatically through DHCP.
+
+### Current Configuration
+
+| Setting | Value |
+|---|---|
+| DHCP | Enabled |
+| IPv4 Address | 10.0.2.15 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | 10.0.2.2 |
+| DHCP Server | 10.0.2.2 |
+| DNS Server | 172.20.10.1 |
+
+### Why This Matters
+
+A server used for Active Directory should have a predictable IP address. Dynamic addressing can cause the server's IP address to change, which can create problems for services that depend on a consistent address.
+
+The next step will be to configure a static IP address for Server01.
+
+### Screenshot
+
+![Server01 Network Configuration](screenshots/server01-network-details.png)
