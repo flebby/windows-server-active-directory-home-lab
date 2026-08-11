@@ -94,6 +94,16 @@ Because the server will later host Active Directory Domain Services and DNS, a s
 7. Used `ipconfig` to verify the configuration.
 8. Used `ping` to test connectivity to the VirtualBox NAT gateway.
 
+### Network Test
+
+The ping test returned four successful replies with:
+
+```text
+Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)
+```
+
+This confirmed that Server01 can communicate with the VirtualBox NAT gateway.
+
 ### Screenshots
 
 #### Static IP Configuration
