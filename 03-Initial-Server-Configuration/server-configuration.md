@@ -67,3 +67,43 @@ The next step will be to configure a static IP address for Server01.
 ### Screenshot
 
 ![Server01 Network Configuration](screenshots/server01-network-details.png)
+
+## Step 3: Configuring a Static IP Address
+
+The Server01 virtual machine was initially configured to obtain its IP address automatically through DHCP.
+
+Because the server will later host Active Directory Domain Services and DNS, a static IP address was configured to provide a predictable network address.
+
+### Static IP Configuration
+
+| Setting | Value |
+|---|---|
+| IP Address | 10.0.2.15 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | 10.0.2.2 |
+| Preferred DNS | 10.0.2.2 |
+
+### Configuration Process
+
+1. Opened Network Connections using `ncpa.cpl`.
+2. Opened the Ethernet adapter properties.
+3. Opened Internet Protocol Version 4 (TCP/IPv4).
+4. Changed the IP configuration from automatic to manual.
+5. Entered the static IP configuration.
+6. Saved the settings.
+7. Used `ipconfig` to verify the configuration.
+8. Used `ping` to test connectivity to the VirtualBox NAT gateway.
+
+### Screenshots
+
+#### Static IP Configuration
+
+![Static IP Configuration](screenshots/server01-static-ip-settings.png)
+
+#### Network Connectivity Test
+
+![Network Test](screenshots/server01-network-test.png)
+
+### Result
+
+Server01 was successfully configured with a static IP address and connectivity to the VirtualBox NAT gateway was verified.
