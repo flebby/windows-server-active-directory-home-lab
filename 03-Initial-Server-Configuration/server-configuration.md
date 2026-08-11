@@ -197,4 +197,53 @@ Server01 successfully demonstrated Internet connectivity and DNS name resolution
 
 The DNS configuration will be reviewed before deploying Active Directory Domain Services because Active Directory relies heavily on DNS.
 
+## Step 5: Configuring the Private Host-Only Network
+
+A second network adapter was configured on Server01 to provide a dedicated private network for the Active Directory lab.
+
+### Network Adapter Configuration
+
+| Adapter | Network Type | IP Address | Purpose |
+|---|---|---|---|
+| Ethernet | NAT | 10.0.2.15 | Internet access |
+| Ethernet 2 | Host-Only | 192.168.56.10 | Private lab network |
+
+The Host-Only adapter uses the `192.168.56.0/24` network.
+
+### Ethernet 2 Configuration
+
+| Setting | Value |
+|---|---|
+| IP Address | 192.168.56.10 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | None |
+| Preferred DNS | 192.168.56.10 |
+
+The default gateway was intentionally left blank because Ethernet 2 is dedicated to the private lab network. Internet traffic continues to use the NAT adapter.
+
+### Network Testing
+
+The Host-Only connection was tested by pinging the host computer:
+
+```text
+ping 192.168.56.1
+```
+
+Internet connectivity was also tested through the NAT adapter:
+
+```text
+ping 8.8.8.8
+```
+
+### Screenshot
+
+![Server01 Host-Only Network Test](screenshots/server01-host-only-network-test.png)
+
+### Result
+
+Server01 successfully uses two separate network interfaces:
+
+- NAT for Internet connectivity.
+- Host-Only for private Active Directory lab communication.
+
 
