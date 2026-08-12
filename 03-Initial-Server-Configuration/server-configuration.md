@@ -156,49 +156,6 @@ This confirmed that DNS name resolution was working before the Active Directory 
 
 ## Step 5: Configuring the Private Host-Only Network
 
-A second virtual network adapter was enabled on Server01 to create a private network for the Active Directory lab.
-
-### Network Architecture
-
-| Adapter | Type | Purpose | Addressing |
-|---|---|---|---|
-| Adapter 1 | NAT | Internet access | DHCP |
-| Adapter 2 | Host-Only | Private lab network | Static |
-
-### Host-Only Network
-
-The VirtualBox Host-Only network was identified as:
-
-| Setting | Value |
-|---|---|
-| Network | 192.168.56.0/24 |
-| Host Adapter | 192.168.56.1 |
-| Network Mask | 255.255.255.0 |
-| DHCP Server | 192.168.56.100 |
-
-### Server01 Host-Only Configuration
-
-| Setting | Value |
-|---|---|
-| IP Address | 192.168.56.10 |
-| Subnet Mask | 255.255.255.0 |
-| Default Gateway | None |
-| Preferred DNS | 192.168.56.10 |
-
-The Host-Only adapter will be used for communication between the Domain Controller and Windows client machines in the private lab network.
-
-### Screenshot
-
-![Server01 Host-Only IP Configuration](screenshots/server01-host-only-ip.png)
-
-### Result
-
-Server01 successfully demonstrated Internet connectivity and DNS name resolution.
-
-The DNS configuration will be reviewed before deploying Active Directory Domain Services because Active Directory relies heavily on DNS.
-
-## Step 5: Configuring the Private Host-Only Network
-
 A second network adapter was configured on Server01 to provide a dedicated private network for the Active Directory lab.
 
 ### Network Adapter Configuration
