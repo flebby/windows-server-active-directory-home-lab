@@ -204,3 +204,43 @@ Server01 successfully uses two separate network interfaces:
 - **Host-Only** for private Active Directory lab communication.
 
 The network is now ready for the Active Directory deployment stage.
+
+## Step 6: Preparing Server01 for Active Directory
+
+Before installing Active Directory Domain Services (AD DS), the server hostname and private network configuration were verified.
+
+### Hostname
+
+The server hostname was verified using:
+
+```text
+hostname
+```
+
+The result was:
+
+```text
+Server01
+```
+
+### Active Directory Network Configuration
+
+The private Host-Only network was configured as follows:
+
+| Setting | Value |
+|---|---|
+| Server Name | Server01 |
+| IPv4 Address | 192.168.56.10 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | None |
+| DNS Server | 192.168.56.10 |
+
+### Why This Configuration?
+
+Server01 will become the Domain Controller for the lab. A consistent hostname and static IP address make the server easier for client computers and Active Directory services to locate.
+
+The Host-Only adapter is dedicated to the private Active Directory network, while the NAT adapter provides Internet connectivity.
+
+### Result
+
+The hostname and network configuration were successfully verified. Server01 is now prepared for the Active Directory Domain Services deployment.
