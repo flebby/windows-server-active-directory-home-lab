@@ -154,29 +154,25 @@ This confirmed that DNS name resolution was working before the Active Directory 
 
 ![Internet and DNS Test](screenshots/server01-internet-dns-test.png)
 
+
 ## Step 5: Configuring the Private Host-Only Network
 
 A second network adapter was configured on Server01 to provide a dedicated private network for the Active Directory lab.
 
 ### Network Adapter Configuration
 
-| Adapter | Network Type | IP Address | Purpose |
-|---|---|---|---|
-| Ethernet | NAT | 10.0.2.15 | Internet access |
-| Ethernet 2 | Host-Only | 192.168.56.10 | Private lab network |
+| Adapter | Network Type | IP Address | Subnet Mask | Default Gateway | Purpose |
+|---|---|---|---|---|---|
+| Ethernet | NAT | 10.0.2.15 | 255.255.255.0 | 10.0.2.2 | Internet access |
+| Ethernet 2 | Host-Only | 192.168.56.10 | 255.255.255.0 | None | Private lab network |
 
 The Host-Only adapter uses the `192.168.56.0/24` network.
 
-### Ethernet 2 Configuration
+### Why Two Network Adapters?
 
-| Setting | Value |
-|---|---|
-| IP Address | 192.168.56.10 |
-| Subnet Mask | 255.255.255.0 |
-| Default Gateway | None |
-| Preferred DNS | 192.168.56.10 |
+The NAT adapter provides Server01 with Internet connectivity, while the Host-Only adapter provides an isolated network for communication between Server01 and future Windows client machines.
 
-The default gateway was intentionally left blank because Ethernet 2 is dedicated to the private lab network. Internet traffic continues to use the NAT adapter.
+The default gateway was intentionally left blank on Ethernet 2 because Internet traffic should continue to use the NAT adapter.
 
 ### Network Testing
 
@@ -186,11 +182,15 @@ The Host-Only connection was tested by pinging the host computer:
 ping 192.168.56.1
 ```
 
+The test was successful.
+
 Internet connectivity was also tested through the NAT adapter:
 
 ```text
 ping 8.8.8.8
 ```
+
+The test was successful.
 
 ### Screenshot
 
@@ -200,7 +200,7 @@ ping 8.8.8.8
 
 Server01 successfully uses two separate network interfaces:
 
-- NAT for Internet connectivity.
-- Host-Only for private Active Directory lab communication.
+- **NAT** for Internet connectivity.
+- **Host-Only** for private Active Directory lab communication.
 
-
+The network is now ready for the Active Directory deployment stage.
