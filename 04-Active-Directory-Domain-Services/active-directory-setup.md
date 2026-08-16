@@ -241,3 +241,40 @@ adlab.test
 ├── Managed Service Accounts
 └── Users
 
+## Step 11: Create Organizational Units
+
+Organizational Units (OUs) were created to organize users and computers within the `adlab.test` Active Directory domain.
+
+The following custom OUs were created:
+
+- `IT`
+- `HR`
+- `Management`
+
+These OUs provide a structured way to organize objects by department. They will also allow Group Policy settings to be applied to specific departments later in the lab.
+
+### OU Structure
+
+```text
+adlab.test
+├── Builtin
+├── Computers
+├── Domain Controllers
+├── Foreign Security Principals
+├── HR
+├── IT
+├── Management
+├── Managed Service Accounts
+└── Users
+```
+
+The three custom OUs were configured with **Protect container from accidental deletion** enabled.
+
+### Screenshot
+
+![Organizational Units Created](screenshots/organizational-units-created.png)
+
+### Result
+
+The `IT`, `HR`, and `Management` Organizational Units were successfully created in the `adlab.test` domain.
+
