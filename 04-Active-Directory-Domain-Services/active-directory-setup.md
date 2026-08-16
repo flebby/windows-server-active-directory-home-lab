@@ -215,3 +215,29 @@ Command:
 ```cmd
 dcdiag /test:advertising
 
+## Step 11: Create Organizational Units
+
+Organizational Units (OUs) were created to organize users and computers within the `adlab.test` Active Directory domain.
+
+The following OUs were created:
+
+- `IT`
+- `HR`
+- `Management`
+
+These OUs provide a structured way to organize objects by department and will allow Group Policy settings to be applied to specific departments in later stages of the lab.
+
+### OU Structure
+
+```text
+adlab.test
+├── Builtin
+├── Computers
+├── Domain Controllers
+├── Foreign Security Principals
+├── HR
+├── IT
+├── Management
+├── Managed Service Accounts
+└── Users
+
