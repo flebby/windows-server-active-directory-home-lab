@@ -253,3 +253,54 @@ The three custom OUs were configured with **Protect container from accidental de
 
 The `IT`, `HR`, and `Management` Organizational Units were successfully created in the `adlab.test` domain.
 
+## Step 12: Create Active Directory Users
+
+We set up a test user account in the `IT` folder. This shows how we manage all users from one central place using Active Directory.
+
+### IT User
+
+The following account was created:
+
+| Setting | Value |
+|---|---|
+| Full Name | John Mensah |
+| Username | `john.mensah` |
+| Organizational Unit | `IT` |
+| Domain | `adlab.test` |
+
+The account was created using **Active Directory Users and Computers**.
+
+A strong password was configured for the account. 
+### Screenshot
+
+![IT User Created](screenshots/it-user-created.png)
+
+### Result
+
+The `John Mensah` user account was successfully created and placed
+inside the `IT` Organizational Unit.
+
+### IT User
+
+The following account was created:
+
+| Setting | Value |
+|---|---|
+| Full Name | John Mensah |
+| Username | `john.mensah` |
+| Organizational Unit | `IT` |
+| Domain | `adlab.test` |
+
+The account was created using **Active Directory Users and Computers**.
+
+A strong password was configured for the account. The password is
+not included in this documentation for security reasons.
+
+### Screenshot
+
+![IT User Created](screenshots/it-user-created.png)
+
+### Result
+
+The `John Mensah` user account was successfully created and placed
+inside the `IT` Organizational Unit.
