@@ -255,27 +255,51 @@ The `IT`, `HR`, and `Management` Organizational Units were successfully created 
 
 ## Step 12: Create Active Directory Users
 
-We set up a test user account in the `IT` folder. This shows how we manage all users from one central place using Active Directory.
+Three test user accounts were created to demonstrate centralized
+user management within the `adlab.test` domain.
 
-### IT User
+### User Accounts
 
-The following account was created:
+| Full Name | Username | Organizational Unit |
+|---|---|---|
+| Sam Mensah | `sam.mensah` | IT |
+| Mary Asante | `mary.asante` | HR |
+| David Owusu | `david.owusu` | Management |
 
-| Setting | Value |
-|---|---|
-| Full Name | John Mensah |
-| Username | `john.mensah` |
-| Organizational Unit | `IT` |
-| Domain | `adlab.test` |
+Each account was created using **Active Directory Users and Computers**
+and placed in the appropriate departmental Organizational Unit.
 
-The account was created using **Active Directory Users and Computers**.
+Strong passwords were configured for the accounts. Passwords are not
+included in this documentation for security reasons.
 
-A strong password was configured for the account. 
-### Screenshot
+### User Organization
 
-![IT User Created](screenshots/it-user-created.png)
+The resulting structure is:
+
+```text
+adlab.test
+├── HR
+│   └── Mary Asante
+├── IT
+│   └── Sam Mensah
+└── Management
+    └── David Owusu
+```
+
+### Verification
+
+Each user account was verified after creation to confirm that the
+account exists in the correct Organizational Unit.
+
+### Screenshots
+
+![IT User](screenshots/it-user-created.png)
+
+![HR User](screenshots/hr-user-created.png)
+
+![Management User](screenshots/management-user-created.png)
 
 ### Result
 
-The `John Mensah` user account was successfully created and placed
-inside the `IT` Organizational Unit.
+Three Active Directory user accounts were successfully created and
+organized according to their respective departments.
